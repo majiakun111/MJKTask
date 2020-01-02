@@ -72,5 +72,4 @@
     self.observer = nil;
 }
 
-
 @end
