@@ -14,14 +14,13 @@
     [super execute];
     
     [self.taskQueue addTaskWithTaskBlock:^(MJKTaskCompletedCallback  _Nonnull completedCallback) {
-           sleep(2);
+           sleep(5);
            NSLog(@"IdleStage1");
            completedCallback ? completedCallback() : nil;
     } priority:MJKTaskPriorityHigh identifier:@"IdleStage1"];
     
     __weak typeof(self) weakSelf = self;
     [self.taskQueue addTaskWithTaskBlock:^(MJKTaskCompletedCallback  _Nonnull completedCallback) {
-        sleep(3);
         NSLog(@"idleStage2");
         completedCallback ? completedCallback() : nil;
         weakSelf.completedCallBlock ? weakSelf.completedCallBlock() : nil;

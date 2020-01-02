@@ -30,4 +30,10 @@
     [self.stageScheduler execute];
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"touchesEnded -->start");
+    sleep(10);
+    NSLog(@"touchesEnded -->end");
+}
+
 @end
