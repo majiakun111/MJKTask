@@ -1,6 +1,6 @@
 //
 //  MJKTaskQueue.h
-//  MJKScheduler
+//  MJKTask
 //
 //  Created by Ansel on 2019/7/12.
 //  Copyright © 2019 Ansel. All rights reserved.
