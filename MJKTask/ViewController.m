@@ -26,7 +26,7 @@
     id<MJKStageProtocol> highPriorityTasksStage = [[MJKHighPriorityTasksStage alloc] init];
     id<MJKStageProtocol> UITasksStage = [[MJKUITasksStage alloc] init];
     id<MJKStageProtocol> idleStage = [[MJKTestIdleStage alloc] init];
-    self.stageScheduler = [[MJKStageChain alloc] initWithStageProtocols:@[highPriorityTasksStage, UITasksStage, idleStage]];
+    self.stageScheduler = [[MJKStageChain alloc] initWithStageProtocols:@[highPriorityTasksStage, UITasksStage] idleStageProtocol:idleStage];
     [self.stageScheduler execute];
 }
 
