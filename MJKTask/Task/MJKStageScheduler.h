@@ -1,5 +1,5 @@
 //
-//  MJKStageChain.h
+//  MJKStageScheduler.h
 //  MJKTask
 //
 //  Created by Ansel on 2020/1/2.
@@ -12,15 +12,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 //就是Chain
-@interface MJKStageChain : NSObject<MJKStageProtocol>
+@interface MJKStageScheduler : NSObject
 
 - (instancetype)initWithStageProtocols:(NSArray<id<MJKStageProtocol>> *)stageProtocols idleStageProtocol:(id<MJKStageProtocol>)idleStageProtocol NS_DESIGNATED_INITIALIZER;
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-#pragma mark - MJKStageProtocol
-@property(nonatomic, strong) id<MJKStageProtocol> next;
-@property(nonatomic, copy) void(^completedCallBlock)(void) NS_UNAVAILABLE;
 - (void)execute;
 
 - (void)addStageProtocol:(id<MJKStageProtocol>)stageProtocol;

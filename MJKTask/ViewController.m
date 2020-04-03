@@ -7,14 +7,14 @@
 //
 
 #import "ViewController.h"
-#import "MJKStageChain.h"
+#import "MJKStageScheduler.h"
 #import "MJKHighPriorityTasksStage.h"
 #import "MJKUITasksStage.h"
 #import "MJKTestIdleStage.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) MJKStageChain *stageScheduler;
+@property (nonatomic, strong) MJKStageScheduler *stageScheduler;
 
 @end
 
@@ -26,7 +26,7 @@
     id<MJKStageProtocol> highPriorityTasksStage = [[MJKHighPriorityTasksStage alloc] init];
     id<MJKStageProtocol> UITasksStage = [[MJKUITasksStage alloc] init];
     id<MJKStageProtocol> idleStage = [[MJKTestIdleStage alloc] init];
-    self.stageScheduler = [[MJKStageChain alloc] initWithStageProtocols:@[highPriorityTasksStage, UITasksStage] idleStageProtocol:idleStage];
+    self.stageScheduler = [[MJKStageScheduler alloc] initWithStageProtocols:@[highPriorityTasksStage, UITasksStage] idleStageProtocol:idleStage];
     [self.stageScheduler execute];
 }
 

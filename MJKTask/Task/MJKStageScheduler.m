@@ -1,21 +1,23 @@
 //
-//  MJKStageChain.m
+//  MJKStageScheduler.m
 //  MJKTask
 //
 //  Created by Ansel on 2020/1/2.
 //  Copyright © 2020 Ansel. All rights reserved.
 //
 
-#import "MJKStageChain.h"
+#import "MJKStageScheduler.h"
 
-@interface MJKStageChain ()
+@interface MJKStageScheduler ()
 
 @property (nonatomic, strong) NSMutableArray<id<MJKStageProtocol>> *stageProtocols;
 @property (nonatomic, strong) id<MJKStageProtocol> idleStageProtocol;
 
+@property(nonatomic, strong) id<MJKStageProtocol> next;
+
 @end
 
-@implementation MJKStageChain
+@implementation MJKStageScheduler
 
 - (instancetype)initWithStageProtocols:(NSArray<id<MJKStageProtocol>> *)stageProtocols idleStageProtocol:(id<MJKStageProtocol>)idleStageProtocol {
     self = [super init];
@@ -43,12 +45,10 @@
         beforeLastStageProtocol.next = stageProtocol;
     }
     
-    [self configCompletedCallBlockForStageProtocol:stageProtocol];
+    [self setupCompletedCallBlockForStageProtocol:stageProtocol];
     
     [self.stageProtocols addObject:stageProtocol];
 }
-
-#pragma mark - MJKStageProtocol
 
 - (void)execute {
     [self.next execute];
@@ -68,11 +68,11 @@
             cursor = stageProtocol;
         }
         
-        [self configCompletedCallBlockForStageProtocol:stageProtocol];
+        [self setupCompletedCallBlockForStageProtocol:stageProtocol];
     }];
 }
 
-- (void)configCompletedCallBlockForStageProtocol:(id<MJKStageProtocol>)stageProtocol {
+- (void)setupCompletedCallBlockForStageProtocol:(id<MJKStageProtocol>)stageProtocol {
     __weak typeof(stageProtocol) weakStageProtocol = stageProtocol;
     [stageProtocol setCompletedCallBlock:^{
         if (weakStageProtocol.next) {

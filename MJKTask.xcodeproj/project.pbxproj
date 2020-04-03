@@ -14,7 +14,7 @@
 		5B57023423BDF3C800A5E8D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B57023323BDF3C800A5E8D5 /* Assets.xcassets */; };
 		5B57023723BDF3C800A5E8D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B57023523BDF3C800A5E8D5 /* LaunchScreen.storyboard */; };
 		5B57023A23BDF3C800A5E8D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B57023923BDF3C800A5E8D5 /* main.m */; };
-		5B57024A23BDF3FC00A5E8D5 /* MJKStageChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B57024523BDF3FC00A5E8D5 /* MJKStageChain.m */; };
+		5B57024A23BDF3FC00A5E8D5 /* MJKStageScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B57024523BDF3FC00A5E8D5 /* MJKStageScheduler.m */; };
 		5B57024B23BDF3FC00A5E8D5 /* MJKStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B57024723BDF3FC00A5E8D5 /* MJKStage.m */; };
 		5B57024C23BDF3FC00A5E8D5 /* MJKTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B57024823BDF3FC00A5E8D5 /* MJKTaskQueue.m */; };
 		5B57024D23BDF3FC00A5E8D5 /* MJKIdleStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B57024923BDF3FC00A5E8D5 /* MJKIdleStage.m */; };
@@ -36,11 +36,11 @@
 		5B57023623BDF3C800A5E8D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B57023823BDF3C800A5E8D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B57023923BDF3C800A5E8D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5B57024123BDF3FC00A5E8D5 /* MJKStageChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJKStageChain.h; sourceTree = "<group>"; };
+		5B57024123BDF3FC00A5E8D5 /* MJKStageScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJKStageScheduler.h; sourceTree = "<group>"; };
 		5B57024223BDF3FC00A5E8D5 /* MJKIdleStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJKIdleStage.h; sourceTree = "<group>"; };
 		5B57024323BDF3FC00A5E8D5 /* MJKTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJKTaskQueue.h; sourceTree = "<group>"; };
 		5B57024423BDF3FC00A5E8D5 /* MJKStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJKStage.h; sourceTree = "<group>"; };
-		5B57024523BDF3FC00A5E8D5 /* MJKStageChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJKStageChain.m; sourceTree = "<group>"; };
+		5B57024523BDF3FC00A5E8D5 /* MJKStageScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJKStageScheduler.m; sourceTree = "<group>"; };
 		5B57024623BDF3FC00A5E8D5 /* MJKStageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJKStageProtocol.h; sourceTree = "<group>"; };
 		5B57024723BDF3FC00A5E8D5 /* MJKStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJKStage.m; sourceTree = "<group>"; };
 		5B57024823BDF3FC00A5E8D5 /* MJKTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJKTaskQueue.m; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 				5B57024723BDF3FC00A5E8D5 /* MJKStage.m */,
 				5B57024223BDF3FC00A5E8D5 /* MJKIdleStage.h */,
 				5B57024923BDF3FC00A5E8D5 /* MJKIdleStage.m */,
-				5B57024123BDF3FC00A5E8D5 /* MJKStageChain.h */,
-				5B57024523BDF3FC00A5E8D5 /* MJKStageChain.m */,
+				5B57024123BDF3FC00A5E8D5 /* MJKStageScheduler.h */,
+				5B57024523BDF3FC00A5E8D5 /* MJKStageScheduler.m */,
 				5B57024323BDF3FC00A5E8D5 /* MJKTaskQueue.h */,
 				5B57024823BDF3FC00A5E8D5 /* MJKTaskQueue.m */,
 			);
@@ -201,7 +201,7 @@
 				5B57024D23BDF3FC00A5E8D5 /* MJKIdleStage.m in Sources */,
 				5B57022C23BDF3C600A5E8D5 /* SceneDelegate.m in Sources */,
 				5B57025523BDF43A00A5E8D5 /* MJKHighPriorityTasksStage.m in Sources */,
-				5B57024A23BDF3FC00A5E8D5 /* MJKStageChain.m in Sources */,
+				5B57024A23BDF3FC00A5E8D5 /* MJKStageScheduler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
